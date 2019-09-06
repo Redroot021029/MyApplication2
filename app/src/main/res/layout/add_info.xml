@@ -16,7 +16,7 @@
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:adjustViewBounds="true"
-            android:background="#ffffff"
+            android:background="#ffffff" android:background="#ffffff"
             android:scaleType="fitCenter"
             android:src="@drawable/new_info_canel"
             android:text="Button"
