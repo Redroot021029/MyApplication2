@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="test"></string>
+    <string name="app_name">All Of Me</string>
+
+
+
+    <string name="text_edit">편집</string>
 </resources>
