@@ -4,55 +4,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_new_0008s_0000_back"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/btn_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="228dp"
-        android:layout_marginTop="88dp"
-        android:text="@string/text_edit"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:id="@+id/text_app_name"
-        app:layout_constraintLeft_toLeftOf="@+id/btn_edit"
-        app:layout_constraintTop_toBottomOf="@+id/btn_edit"/>
-
-    <EditText
-        android:id="@+id/search_item"
-        style="@style/EditText.Flat.Grey"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/spacing_xmlarge"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/edit_text_round_bg"
-        android:drawableEnd="@drawable/ic_search_grey"
-        android:drawableRight="@drawable/ic_search_grey"
-        android:hint="Type keyword"
-        android:minHeight="@dimen/spacing_xmlarge"
-        android:paddingLeft="@dimen/spacing_middle"
-        android:paddingRight="@dimen/spacing_middle"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="50dp">
+
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:background="#ffffff"
+        android:paddingTop="5dp"
+        android:scaleType="fitCenter"
+        android:layout_marginLeft="13dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_app_name" />
+        app:srcCompat="@drawable/main_new_0008s_0002_edit"
+
+        />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="20dp"
+                android:background="ffffff"
+                android:paddingTop="5dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:srcCompat="@drawable/add_view_0008_plus" />
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+
+        <EditText
+            android:id="@+id/search_item"
+            style="@style/EditText.Flat.Grey"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing_xmlarge"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_text_round_bg"
+            android:drawableEnd="@drawable/ic_search_grey"
+            android:drawableRight="@drawable/ic_search_grey"
+            android:hint="Type keyword"
+            android:minHeight="@dimen/spacing_xmlarge"
+            android:paddingLeft="@dimen/spacing_middle"
+            android:paddingRight="@dimen/spacing_middle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerview_main_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scrollbars="vertical"
         android:scrollingCache="true"
+        app:layout_constraintBottom_toTopOf="@id/navigation"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_item"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/navigation" />
+        app:layout_constraintTop_toBottomOf="@id/search_item" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation"
@@ -63,10 +102,13 @@
         android:background="@color/blue_grey_700"
         app:itemIconTint="@drawable/color_state_white_2"
         app:itemTextColor="@drawable/color_state_white_2"
-        app:menu="@menu/menu_bottom_navigation_shifting"
-        app:layout_constraintTop_toBottomOf="@id/recyclerView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/recyclerview_main_list"
+        app:menu="@menu/menu_bottom_navigation_shifting"/>
+
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
